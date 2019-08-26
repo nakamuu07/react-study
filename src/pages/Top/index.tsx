@@ -1,13 +1,12 @@
 import React from 'react';
-import logo from '../logo.svg';
-import './App.css';
+import './index.css';
 
-const App: React.FC = () => {
+const Top: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Edit and save to reload.</p>
+        <img src="images/logo.svg" className="App-logo" alt="logo" />
+        <p>React 勉強会</p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -21,4 +20,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default Top;

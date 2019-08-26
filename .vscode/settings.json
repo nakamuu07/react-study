@@ -1,0 +1,6 @@
+{
+  "editor.fontSize": 12,
+  "editor.tabSize": 2,
+  "javascript.format.enable": false,
+  "prettier.singleQuote": true
+}
