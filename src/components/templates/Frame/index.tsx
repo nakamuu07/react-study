@@ -1,6 +1,6 @@
+import Menu from 'components/organisms/Menu';
 import * as React from 'react';
 import Div from './styles';
-import Menu from '../../organisms/Menu';
 
 interface FrameProps {
   children: React.ReactNode;

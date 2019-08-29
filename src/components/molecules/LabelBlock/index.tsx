@@ -1,6 +1,6 @@
+import LabelComponent from 'components/atoms/Label';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import LabelComponent from '../../atoms/Label';
 import Ul from './styles';
 
 interface Label {
