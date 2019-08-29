@@ -1,14 +1,60 @@
 import * as React from 'react';
-import LabelBlock, { LablelPlops } from '../../molecules/LabelBlock';
+import { NavLink } from 'react-router-dom';
+import Label from '../../atoms/Label';
+import Ul from './styles';
+
+interface SubMenu {
+  label: string;
+  path: string;
+}
+
+interface Menu {
+  label: string;
+  path?: string;
+  subMenu?: SubMenu[];
+}
 
 const Menu: React.FC = () => {
-  const labels: LablelPlops['labels'] = [
+  const menus: Menu[] = [
     { label: 'Top', path: '/top' },
     { label: 'Props', path: '/props' },
-    { label: 'State', path: '/state' }
+    { label: 'State', path: '/state' },
+    {
+      label: 'Sample',
+      subMenu: [
+        { label: 'Sample1', path: '/sample1' },
+        { label: 'Sample2', path: '/sample2' },
+        { label: 'Sample3', path: '/sample3' }
+      ]
+    }
   ];
 
-  return <LabelBlock labels={labels} />;
+  return (
+    <Ul>
+      {menus.map(({ label, path, subMenu }) => (
+        <li key={label}>
+          {path !== undefined ? (
+            <NavLink className="nav-link" to={path}>
+              {label}
+            </NavLink>
+          ) : (
+            <Label isCursorPointer={true}>{label}</Label>
+          )}
+          {subMenu && (
+            <ul className="sub-menu">
+              {subMenu.map(({ label: label2, path: path2 }) => (
+                <li key={label2}>
+                  <NavLink className="nav-link" to={path2}>
+                    {label2}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </Ul>
+  );
 };
 
 export default Menu;
