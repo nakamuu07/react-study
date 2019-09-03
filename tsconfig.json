@@ -1,6 +1,6 @@
 {
-  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
+    "baseUrl": "src",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "sourceMap": true,
@@ -18,6 +18,9 @@
         "name": "typescript-styled-plugin"
       }
     ],
+    "paths": {
+      "*": ["./*"]
+    },
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,

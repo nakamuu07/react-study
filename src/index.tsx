@@ -1,11 +1,11 @@
-import { routerMiddleware } from 'connected-react-router';
+import { ConnectedRouter, routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { createStore } from 'redux';
-// import { composeWithDevTools } from 'redux-devtools-extension';
+import { Route } from 'react-router-dom';
+import { applyMiddleware, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import PagesComponent from './pages';
@@ -25,15 +25,18 @@ const logger = createLogger({
 
 middlewares.push(logger);
 
-const store = createStore(reducers);
+const store = createStore(
+  reducers(history),
+  composeWithDevTools(applyMiddleware(...middlewares))
+);
 
 sagaMiddleware.run(sagas);
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <ConnectedRouter history={history}>
       <Route component={PagesComponent} exact={false} path="/" />
-    </BrowserRouter>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 );

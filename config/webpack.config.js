@@ -316,6 +316,13 @@ module.exports = function(webpackEnv) {
         // Disable require.ensure as it's not a standard language feature.
         { parser: { requireEnsure: false } },
 
+        {
+          test: /\.(js|jsx|mjs)$/,
+          loader: require.resolve('source-map-loader'),
+          enforce: 'pre',
+          include: paths.appSrc
+        },
+
         // First, run the linter.
         // It's important to do this before Babel processes the JS.
         {
@@ -406,6 +413,19 @@ module.exports = function(webpackEnv) {
                 // being evaluated would be much more helpful.
                 sourceMaps: false
               }
+            },
+            {
+              test: /\.(ts|tsx)$/,
+              include: paths.appSrc,
+              use: [
+                {
+                  loader: require.resolve('ts-loader'),
+                  options: {
+                    transpileOnly: true,
+                    configFile: paths.appTsProdConfig
+                  }
+                }
+              ]
             },
             // "postcss" loader applies autoprefixer to our CSS.
             // "css" loader resolves paths in CSS and adds assets as dependencies.
