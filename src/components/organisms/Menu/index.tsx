@@ -20,11 +20,11 @@ const Menu: React.FC = () => {
     { label: 'Props', path: '/props' },
     { label: 'State', path: '/state' },
     {
-      label: 'Sample',
+      label: 'Redux',
       subMenu: [
-        { label: 'Sample1', path: '/sample1' },
-        { label: 'Sample2', path: '/sample2' },
-        { label: 'Sample3', path: '/sample3' }
+        { label: 'Sample1', path: '/redux/sample1' },
+        { label: 'Sample2', path: '/redux/sample2' },
+        { label: 'Sample3', path: '/redux/sample3' }
       ]
     }
   ];

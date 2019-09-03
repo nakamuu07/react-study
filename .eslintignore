@@ -2,3 +2,5 @@ build/*
 config/*
 scripts/*
 .eslintrc.js
+db.js
+db.json
