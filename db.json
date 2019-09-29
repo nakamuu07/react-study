@@ -24,5 +24,28 @@
       "age": 40,
       "mailAddress": "user4@example.co.jp"
     }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "プロテイン",
+      "price": 150,
+      "stock": 8000,
+      "memo": "今月の目玉商品"
+    },
+    {
+      "id": 2,
+      "name": "サラダチキン",
+      "price": 198,
+      "stock": 100,
+      "memo": ""
+    },
+    {
+      "id": 3,
+      "name": "ダンベル",
+      "price": 398,
+      "stock": 200,
+      "memo": "5kg"
+    }
   ]
 }

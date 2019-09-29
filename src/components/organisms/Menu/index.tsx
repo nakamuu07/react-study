@@ -26,6 +26,13 @@ const Menu: React.FC = () => {
         { label: 'Sample2', path: '/redux/sample2' },
         { label: 'Sample3', path: '/redux/sample3' }
       ]
+    },
+    {
+      label: 'Practice',
+      subMenu: [
+        { label: '商品一覧', path: '/practice/list' },
+        { label: '商品登録', path: '/practice/create' }
+      ]
     }
   ];
 
