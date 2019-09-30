@@ -21,6 +21,8 @@ const Table = styled.table`
         border-bottom: 2px solid;
 
         th {
+          border-right: 1px solid;
+
           &.resize {
             border-right: 1px solid;
             position: relative;

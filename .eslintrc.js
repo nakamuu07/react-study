@@ -27,6 +27,7 @@ module.exports = {
     'no-undef': 'off',
     'no-unused-vars': 'off',
     'react/default-props-match-prop-types': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'react/jsx-boolean-value': ['error', 'always', { never: ['personal'] }],
     'react/jsx-filename-extension': [
       'error',
